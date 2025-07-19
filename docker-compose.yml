@@ -1,0 +1,23 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: geser-db
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: geser
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+    ports:
+      - "3336:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - geser
+
+volumes:
+  mysql-data:
+
+networks:
+  geser:
+    name: geser
