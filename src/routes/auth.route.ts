@@ -4,6 +4,6 @@ import { authConfig } from "../config/auth";
  
 const app = express.Router()
  
-app.use("/auth/*", ExpressAuth(authConfig));
+app.use("/auth", ExpressAuth(authConfig));
 
 export default app;
