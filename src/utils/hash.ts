@@ -1,9 +1,11 @@
-import bcrypt from "bcrypt";
+import bcrypt from 'bcrypt';
 
-export function validatePassword(password: string, hash: string) {
+const SALT_ROUNDS = 10;
+
+export const hashPassword = async (password: string) => {
+  return bcrypt.hash(password, SALT_ROUNDS);
+};
+
+export const validatePassword = async (password: string, hash: string) => {
   return bcrypt.compare(password, hash);
-}
-
-export function hashPassword(password: string) {
-  return bcrypt.hash(password, 10);
-}
+};
