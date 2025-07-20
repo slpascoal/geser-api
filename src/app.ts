@@ -13,6 +13,6 @@ app.use(express.json());
 
 app.use(authRoute);
 
-app.use('/api', healthRoute); // rota: /api/health
+app.use('/api', healthRoute);
 
 export default app;
